@@ -16,7 +16,7 @@ def clone_arr():
 def user_input():
     global trys
     global u_input
-    for _ in range(trys):
+    while (trys != 0):
         u_input=input()
         check_input()
 
@@ -25,31 +25,29 @@ def check_input():
     global u_input
     k=[]
     #for i, j in zip(word_arr, range(len(word_arr))):
-    if(u_input in word_arr):
-        for n in range(len(word_arr)):
-            if(word_arr[n] == u_input):
-                k.append(word_arr.index(u_input, n, len(word)))
-        print(k)
-        for j in k:
-            print(j)
-            #j = word_arr.index(u_input)
-            dash_word_array[j] = u_input
+    if(trys != 0):
+        if(u_input in word_arr):
+            for n in range(len(word_arr)):
+                if(word_arr[n] == u_input):
+                    k.append(word_arr.index(u_input, n, len(word)))
+            for j in k:
+                dash_word_array[j] = u_input
             print(dash_word_array)
             print("you have " + str(trys))
             #break
-    else:
-        check_input2()
+        else:
+            check_input2()
             #break
 
 def check_input2():
     global trys
     global u_input
-    for i in word_arr:
-        if(u_input != i):
-            print("Im in else")
-            trys = trys - 1
-            print("you have " + str(trys))
-            #break
+    #for i in word_arr:
+    if(trys != 0):
+    #print("Im in else")
+        trys = trys - 1
+        print("you have " + str(trys))
+    #break
 
 
 load_to_array()
